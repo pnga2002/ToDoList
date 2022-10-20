@@ -1,0 +1,232 @@
+bofy {
+  font-size: 16px;
+  background-color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.card {
+  width: 350px;
+  margin: 50px auto;
+  overflow: hidden;
+  line-height: 2rem;
+  box-shadow: 0 0 6px grey;
+  letter-spacing: 1px;
+}
+.card-header {
+  height: 215px;
+  position: relative;
+}
+.card-header img {
+  width: 100%;
+}
+/* card body */
+.card-body {
+  position: relative;
+}
+.card-body::before {
+  position: absolute;
+  content: "";
+  top: -35px;
+  left: -50px;
+  background-color: #fff;
+  height: 100px;
+  width: 120%;
+  transform: rotate(10deg);
+  display: block;
+}
+.card-content {
+  padding: 0 20px;
+  position: relative;
+}
+
+.card-title p {
+  font-size: 0.8rem;
+}
+.filter-btn {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  transition: all 0.4s ease-in-out 0s;
+}
+.filter-btn span i {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #fa396b;
+  display: block;
+  right: 25px;
+  top: -30px;
+  text-align: center;
+  color: #fff;
+  line-height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  z-index: 999;
+}
+span.toggle-btn:hover {
+  cursor: pointer;
+}
+.filter-btn a {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  right: 25px;
+  display: block;
+  top: -30px;
+  color: #fff;
+  z-index: 99;
+  font-size: 1.2rem;
+  transition: all 0.4s cubic-bezier(0.68, 1, 0.265, 1);
+}
+.filter-btn.open span.toggle-btn i {
+  background-color: #de3963;
+}
+.filter-btn:after {
+  height: 150px;
+  width: 150px;
+  content: "";
+  background-color: #fa396b;
+  position: absolute;
+  top: -86px;
+  right: -35px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+.filter-btn .fa-times,
+.filter-btn.open .fa-filter {
+  display: none;
+}
+.filter-btn .fa-filter,
+.filter-btn.open .fa-times {
+  display: block;
+}
+.filter-btn.open:after {
+  transform: scale(1);
+}
+.filter-btn.open a:nth-child(1) {
+  transform: translate(9px, -48px);
+}
+.filter-btn.open a:nth-child(2) {
+  transform: translate(-42px, -26px);
+}
+.filter-btn.open a:nth-child(3) {
+  transform: translate(-39px, 29px);
+}
+.filter-btn.open a:nth-child(4) {
+  transform: translate(6px, 52px);
+}
+.card-add {
+  display: flex;
+  position: relative;
+}
+.card-add input {
+  color: #fff;
+  width: 100%;
+  margin-right: 10px;
+  height: 40px;
+  background-color: rgba(222, 57, 99, 0.6);
+  border: 0px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  outline: none;
+  text-indent: 18px;
+}
+.card-add input::placeholder {
+  color: #fff;
+}
+.card-add button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  box-shadow: 0 0 0 2px rgba(222, 57, 99);
+  border: none;
+  outline: hidden;
+  color: rgba(222, 57, 99);
+}
+.card-todo ul {
+  list-style: none;
+  padding: 0;
+}
+.card-todo ul li {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #444;
+  box-shadow: 0px 0px 2px rgba(44, 62, 80, 0.3);
+  margin-bottom: 10px;
+  padding: 0 10px;
+  /* word-break: break-word; */
+}
+ul.todo#todo {
+  padding-top: 30px;
+}
+ul.todo#completed {
+  position: relative;
+  padding: 30px 0;
+}
+ul.todo#completed:before {
+  content: "";
+  width: 150px;
+  height: 1px;
+  background: #d8e5e0;
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  margin: 0 0 0 -75px;
+}
+ul.todo#completed li .buttons .complete .fas {
+    display: block;
+    color: #25b99a;
+  }
+  ul.todo#completed li .buttons .complete .far {
+    display: none;
+  }
+ul.todo#todo:empty:after {
+  content: "You have nothing to-do!";
+  margin: 15px 0 0 0;
+}
+
+ul.todo#completed:empty:after {
+  content: "You have yet to complete any tasks.";
+}
+ul.todo#completed span {
+    color: #25b99a;
+    
+  }
+ul.todo li .buttons button {
+  background: none;
+  border: 0px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0 5px 5px;
+  font-size: 1rem;
+}
+ul.todo li .buttons .remove {
+  color: #aaa;
+}
+ul.todo li .buttons .remove:hover {
+  color: #fa396b;
+}
+ul.todo li .buttons .complete {
+  color: #aaa;
+}
+ul.todo li .buttons .complete:hover {
+  color: #25b99a;
+}
+ul.todo li .buttons .complete {
+  color: #aaa;
+}
+ul.todo li .buttons .complete .fas {
+  display: none;
+}
